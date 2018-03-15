@@ -15,6 +15,7 @@
 		0E7494B7205ABAF60019A9C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7494B6205ABAF60019A9C7 /* main.m */; };
 		0E7494C1205ABAF60019A9C7 /* FoodTrackerObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7494C0205ABAF60019A9C7 /* FoodTrackerObjCTests.m */; };
 		0E7494CC205ABAF60019A9C7 /* FoodTrackerObjCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7494CB205ABAF60019A9C7 /* FoodTrackerObjCUITests.m */; };
+		0E7494DB205ABD630019A9C7 /* RatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E7494DA205ABD630019A9C7 /* RatingControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		0E7494C7205ABAF60019A9C7 /* FoodTrackerObjCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerObjCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7494CB205ABAF60019A9C7 /* FoodTrackerObjCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodTrackerObjCUITests.m; sourceTree = "<group>"; };
 		0E7494CD205ABAF60019A9C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E7494D9205ABD630019A9C7 /* RatingControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RatingControl.h; sourceTree = "<group>"; };
+		0E7494DA205ABD630019A9C7 /* RatingControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RatingControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				0E7494AB205ABAF60019A9C7 /* ViewController.m */,
 				0E7494AD205ABAF60019A9C7 /* Main.storyboard */,
 				0E7494B0205ABAF60019A9C7 /* Assets.xcassets */,
+				0E7494D9205ABD630019A9C7 /* RatingControl.h */,
+				0E7494DA205ABD630019A9C7 /* RatingControl.m */,
 				0E7494B2205ABAF60019A9C7 /* LaunchScreen.storyboard */,
 				0E7494B5205ABAF60019A9C7 /* Info.plist */,
 				0E7494B6205ABAF60019A9C7 /* main.m */,
@@ -265,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7494DB205ABD630019A9C7 /* RatingControl.m in Sources */,
 				0E7494AC205ABAF60019A9C7 /* ViewController.m in Sources */,
 				0E7494B7205ABAF60019A9C7 /* main.m in Sources */,
 				0E7494A9205ABAF60019A9C7 /* AppDelegate.m in Sources */,
