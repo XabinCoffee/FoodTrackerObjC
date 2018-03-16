@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
 @interface RatingControl : UIStackView
 
-@property (weak, nonatomic) NSNumber *rating;
-@property (weak, nonatomic) NSNumber *starSize;
-@property (weak, nonatomic) NSNumber *starCount;
+@property int rating;
+@property IBInspectable double starSize;
+@property IBInspectable int starCount;
 
+-(id)initWithFrame:(CGRect)frame;
+-(id)initWithCoder:(NSCoder*)coder;
 -(void)setupButtons;
 
 @end
