@@ -81,13 +81,18 @@
 
 
 -(IBAction) unwindToMealList:(UIStoryboardSegue *)unwindSegue{
-    ViewController *controller = unwindSegue.sourceViewController;
-    [meals addObject:controller.meal];
-    [self.tableView reloadData];
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    if (selectedIndexPath != nil){
+        ViewController *source = unwindSegue.sourceViewController;
+        Meal *meal = source.meal;
+        [meals replaceObjectAtIndex:selectedIndexPath.row withObject:meal];
+        [self.tableView reloadData];
+    } else {
+        ViewController *controller = unwindSegue.sourceViewController;
+        [meals addObject:controller.meal];
+        [self.tableView reloadData];
+    }
 }
-
-
-
 
 
 /*
