@@ -1,5 +1,5 @@
 //
-//  RatingButton.h
+//  MealTableViewController.h
 //  FoodTrackerObjC
 //
 //  Created by Xabin Rodriguez on 19/3/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RatingButton : UIButton
-
-@property (nonatomic) int value;
+@interface MealTableViewController : UITableViewController
 
 @end

@@ -19,6 +19,9 @@
 
 #pragma mark Initializers
 
+- (IBAction)saveButton:(id)sender {
+}
+
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     ratingButtons = [[NSMutableArray alloc] init];

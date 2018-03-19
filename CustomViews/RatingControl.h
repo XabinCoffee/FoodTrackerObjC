@@ -16,7 +16,6 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable int starCount;
 @property (nonatomic) BOOL createdFromIB;
 
-
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithCoder:(NSCoder*)coder;
 -(void)setupButtons;

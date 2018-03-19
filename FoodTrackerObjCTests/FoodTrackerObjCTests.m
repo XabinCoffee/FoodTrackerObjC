@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Meal.h"
 
 @interface FoodTrackerObjCTests : XCTestCase
 
@@ -27,6 +28,13 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+}
+
+-(void) testMeal{
+    Meal *meal = [[Meal alloc] init];
+    [meal setParams:@"Entxaalailla" andPhoto:nil andRating:5];
+    
+    XCTAssertEqual(meal.name, @"Entxaalailla");
 }
 
 - (void)testPerformanceExample {
