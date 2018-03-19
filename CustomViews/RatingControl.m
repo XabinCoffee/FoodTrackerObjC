@@ -37,7 +37,6 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self setupButtons];
-    NSLog(@"%d", self.starCount);
 }
 
 

@@ -34,6 +34,8 @@
     Meal *meal = [[Meal alloc] init];
     [meal setParams:@"Entxaalailla" andPhoto:nil andRating:5];
     
+    //Que haces mirando los tests? Tan cotillas somos?
+    
     XCTAssertEqual(meal.name, @"Entxaalailla");
 }
 

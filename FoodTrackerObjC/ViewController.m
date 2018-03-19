@@ -17,12 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _nameTextField.delegate = self;
+    
+    if (_meal != nil){
+        _photoImageView.image = _meal.photo;
+        _nameTextField.text = _meal.name;
+        _ratingControl.rating = _meal.rating;
+        [_ratingControl updateButtonSelectionStates];
+    }
+    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark UITextFieldDelegate
@@ -61,9 +68,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     [super prepareForSegue:segue sender:sender];
     
-    if ([sender class] == [UIBarButtonItem class] && sender == _saveButton){
-        NSLog(@"!!!");
-        Meal *mael = [[Meal alloc] init];
+    if (sender == _saveButton){
+        Meal *mael = [[Meal alloc] init]; //Oops.
         [mael setParams:_nameTextField.text andPhoto:_photoImageView.image andRating:_ratingControl.rating];
         _meal = mael;
     }
@@ -83,6 +89,12 @@
 
 
 - (IBAction)cancel:(UIBarButtonItem *)sender {
+    
+    if (_meal != nil){ //If meal isn't nil, you're editing
+        [[self navigationController] popViewControllerAnimated:YES];
+    } else {
+        
     [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 @end

@@ -96,6 +96,7 @@
 		0E74949B205ABAF60019A9C7 = {
 			isa = PBXGroup;
 			children = (
+				0EFB59C3205FFD5F003BF114 /* Model */,
 				0EFB59C2205FDC12003BF114 /* CustomViews */,
 				0E7494A6205ABAF60019A9C7 /* FoodTrackerObjC */,
 				0E7494BF205ABAF60019A9C7 /* FoodTrackerObjCTests */,
@@ -128,8 +129,6 @@
 				0E7494B0205ABAF60019A9C7 /* Assets.xcassets */,
 				0E7494B5205ABAF60019A9C7 /* Info.plist */,
 				0E7494B6205ABAF60019A9C7 /* main.m */,
-				0EFB59B9205FB857003BF114 /* Meal.h */,
-				0EFB59BA205FB857003BF114 /* Meal.m */,
 			);
 			path = FoodTrackerObjC;
 			sourceTree = "<group>";
@@ -163,6 +162,15 @@
 				0EFB59BD205FD3BF003BF114 /* MealTableViewCell.m */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		0EFB59C3205FFD5F003BF114 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0EFB59B9205FB857003BF114 /* Meal.h */,
+				0EFB59BA205FB857003BF114 /* Meal.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

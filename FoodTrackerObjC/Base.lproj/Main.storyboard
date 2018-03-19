@@ -45,7 +45,7 @@
                                                 <real key="value" value="30"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                <integer key="value" value="7"/>
+                                                <integer key="value" value="5"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
@@ -91,7 +91,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1271.2" y="71.514242878560722"/>
+            <point key="canvasLocation" x="1279" y="59"/>
         </scene>
         <!--Your Meals-->
         <scene sceneID="78o-tA-rDk">
@@ -138,6 +138,7 @@
                                     <outlet property="nameLabel" destination="7yA-DY-GZr" id="567-Wz-TRJ"/>
                                     <outlet property="photoImageView" destination="foi-yn-3Ze" id="0t6-od-CgY"/>
                                     <outlet property="ratingControl" destination="4az-2c-E9B" id="gxn-DU-lcs"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="eC7-5d-xJs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -149,7 +150,7 @@
                     <navigationItem key="navigationItem" title="Your Meals" id="pc5-XP-fAM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ry0-LC-YbN">
                             <connections>
-                                <segue destination="m2g-Kh-D0j" kind="presentation" id="MiS-nq-JcB"/>
+                                <segue destination="m2g-Kh-D0j" kind="presentation" identifier="AddItem" id="MiS-nq-JcB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -174,7 +175,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02I-yT-jOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="597"/>
+            <point key="canvasLocation" x="358" y="420"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eYk-s3-f1p">
@@ -198,4 +199,7 @@
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eC7-5d-xJs"/>
+    </inferredMetricsTieBreakers>
 </document>

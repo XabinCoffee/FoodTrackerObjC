@@ -46,10 +46,22 @@
 }
 
 -(void) loadMeals{
-    Meal* meal1 = [[Meal alloc] init];
+    
+    UIImage *photo1 = [UIImage imageNamed:@"meal1"];
     UIImage *photo2 = [UIImage imageNamed:@"meal2"];
-    [meal1 setParams:@"Meal" andPhoto:photo2 andRating:3];
+    UIImage *photo3 = [UIImage imageNamed:@"meal3"];
+    
+    Meal* meal1 = [[Meal alloc] init];
+    Meal* meal2 = [[Meal alloc] init];
+    Meal* meal3 = [[Meal alloc] init];
+    
+    [meal1 setParams:@"Meal" andPhoto:photo1 andRating:1];
+    [meal2 setParams:@"Meal" andPhoto:photo2 andRating:4];
+    [meal3 setParams:@"Meal" andPhoto:photo3 andRating:2];
+    
     [meals addObject:meal1];
+    [meals addObject:meal2];
+    [meals addObject:meal3];
 }
 
 
@@ -112,15 +124,27 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    [super prepareForSegue:segue sender:sender];
+    
+    if ([segue.identifier isEqualToString:@"AddItem"]){
+        NSLog(@"Adding item");
+    } else if ([segue.identifier isEqualToString:@"ShowDetail"]){
+        MealTableViewCell *selectedCell = sender;
+        NSInteger pos = [self.tableView indexPathForCell:selectedCell].row;
+        Meal *selectedMeal = [meals objectAtIndex:pos];
+        ViewController *destination = segue.destinationViewController;
+        destination.meal = selectedMeal;
+    }
+    
 }
-*/
+
 
 
 
