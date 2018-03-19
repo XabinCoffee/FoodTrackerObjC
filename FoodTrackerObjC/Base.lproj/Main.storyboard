@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-LL-xnG">
-                                <rect key="frame" x="16" y="84" width="343" height="399"/>
+                                <rect key="frame" x="16" y="84" width="343" height="416"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ER7-gH-3zA">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
@@ -35,13 +35,13 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mMK-eb-OZc" customClass="RatingControl">
-                                        <rect key="frame" x="89" y="366" width="165" height="33"/>
+                                        <rect key="frame" x="146.5" y="366" width="50" height="50"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starSize">
-                                                <real key="value" value="35"/>
+                                                <real key="value" value="40"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="starCount">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </stackView>
@@ -56,8 +56,8 @@
                         <constraints>
                             <constraint firstItem="bLz-LL-xnG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="EXR-x0-7bb"/>
                             <constraint firstItem="bLz-LL-xnG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Mfi-CR-5xZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bLz-LL-xnG" secondAttribute="bottom" constant="167" id="ZKJ-N6-tBF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bLz-LL-xnG" secondAttribute="trailing" constant="16" id="i7P-bu-jVw"/>
-                            <constraint firstItem="bLz-LL-xnG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="omp-iW-1qm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

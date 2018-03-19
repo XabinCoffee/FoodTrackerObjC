@@ -11,9 +11,11 @@
 IB_DESIGNABLE
 @interface RatingControl : UIStackView
 
-@property int rating;
-@property IBInspectable double starSize;
-@property IBInspectable int starCount;
+@property (nonatomic) int rating;
+@property (nonatomic) IBInspectable double starSize;
+@property (nonatomic) IBInspectable int starCount;
+@property (nonatomic) BOOL createdFromIB;
+
 
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithCoder:(NSCoder*)coder;

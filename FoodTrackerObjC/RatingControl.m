@@ -7,6 +7,7 @@
 //
 
 #import "RatingControl.h"
+#import "RatingButton.h"
 
 
 @implementation RatingControl{
@@ -21,15 +22,19 @@
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     ratingButtons = [[NSMutableArray alloc] init];
-    [self setupButtons];
     return self;
 }
 
 - (id)initWithCoder:(NSCoder *)coder{
     self = [super initWithCoder:coder];
     ratingButtons = [[NSMutableArray alloc] init];
-    [self setupButtons];
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setupButtons];
+    NSLog(@"%d", self.starCount);
 }
 
 
@@ -46,18 +51,47 @@
     UIImage *filledStar = [UIImage imageNamed:@"filledStar"];
     UIImage *highlightedStar = [UIImage imageNamed:@"highlightedStar"];
     
-    for (int i = 0; i < 5; i++){
-        UIButton *button = [[UIButton alloc] init];
+    for (int i = 0; i < _starCount; i++){
+        RatingButton *button = [[RatingButton alloc] init];
+        button.value = i+1;
         [button setImage:emptyStar forState:UIControlStateNormal];
         [button setImage:filledStar forState:UIControlStateSelected];
         [button setImage:highlightedStar forState:UIControlStateHighlighted];
         button.translatesAutoresizingMaskIntoConstraints=NO;
-        [button.heightAnchor constraintEqualToConstant:33].active=YES;
-        [button.widthAnchor constraintEqualToConstant:33].active=YES;
+        [button.heightAnchor constraintEqualToConstant:_starSize].active=YES;
+        [button.widthAnchor constraintEqualToConstant:_starSize].active=YES;
+        
+        [button addTarget:self action:@selector(ratingButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        
         [self addArrangedSubview:button];
         [ratingButtons addObject:button];
     }
 
 }
+
+
+#pragma mark Button Action
+
+-(void) ratingButtonTapped:(RatingButton*)button{
+    NSInteger index = button.value;
+    if (_rating == index){
+        _rating = 0;
+    } else {
+        _rating = index;
+    }
+    [self updateButtonSelectionStates];
+}
+
+-(void) updateButtonSelectionStates{
+    for (RatingButton *button in ratingButtons){
+        if (_rating >= button.value){
+            [button setSelected:YES];
+        } else {
+            [button setSelected:FALSE];
+        }
+    }
+}
+
+
 
 @end
