@@ -9,6 +9,7 @@
 #import "MealTableViewController.h"
 #import "Meal.h"
 #import "MealTableViewCell.h"
+#import "ViewController.h"
 
 @interface MealTableViewController (){
     
@@ -22,15 +23,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    meals = [[NSMutableArray alloc] init];
     [self loadMeals];
     
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,15 +46,11 @@
 }
 
 -(void) loadMeals{
-    meals = [[NSMutableArray alloc] init];
     Meal* meal1 = [[Meal alloc] init];
     UIImage *photo2 = [UIImage imageNamed:@"meal2"];
     [meal1 setParams:@"Meal" andPhoto:photo2 andRating:3];
     [meals addObject:meal1];
 }
-
-
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,9 +62,20 @@
     cell.nameLabel.text = meal.name;
     cell.photoImageView.image = meal.photo;
     cell.ratingControl.rating = meal.rating;
+    [cell.ratingControl updateButtonSelectionStates];
     
     return cell;
 }
+
+
+-(IBAction) unwindToMealList:(UIStoryboardSegue *)unwindSegue{
+    ViewController *controller = unwindSegue.sourceViewController;
+    [meals addObject:controller.meal];
+    [self.tableView reloadData];
+}
+
+
+
 
 
 /*
@@ -84,17 +86,17 @@
 }
 */
 
-/*
-// Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [meals removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        //
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -119,6 +121,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 
 @end

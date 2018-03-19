@@ -124,12 +124,12 @@
 				0EFB59BF205FD56F003BF114 /* MealTableViewController.h */,
 				0EFB59C0205FD56F003BF114 /* MealTableViewController.m */,
 				0E7494AD205ABAF60019A9C7 /* Main.storyboard */,
+				0E7494B2205ABAF60019A9C7 /* LaunchScreen.storyboard */,
 				0E7494B0205ABAF60019A9C7 /* Assets.xcassets */,
 				0E7494B5205ABAF60019A9C7 /* Info.plist */,
 				0E7494B6205ABAF60019A9C7 /* main.m */,
 				0EFB59B9205FB857003BF114 /* Meal.h */,
 				0EFB59BA205FB857003BF114 /* Meal.m */,
-				0E7494B2205ABAF60019A9C7 /* LaunchScreen.storyboard */,
 			);
 			path = FoodTrackerObjC;
 			sourceTree = "<group>";

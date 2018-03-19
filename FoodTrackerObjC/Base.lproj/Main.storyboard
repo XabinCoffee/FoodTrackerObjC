@@ -65,16 +65,26 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Meal" id="a9S-0N-53E">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gMk-pO-Hu5"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fpz-Sv-285"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gMk-pO-Hu5">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="ab6-lU-FYu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="fpz-Sv-285">
+                            <connections>
+                                <segue destination="oYF-h9-PJv" kind="unwind" unwindAction="unwindToMealList:" id="HPs-uY-G4f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameTextField" destination="ER7-gH-3zA" id="5vX-sL-PML"/>
                         <outlet property="photoImageView" destination="3j8-U0-akO" id="MMw-aM-GMQ"/>
+                        <outlet property="ratingControl" destination="mMK-eb-OZc" id="T18-Ie-AAZ"/>
                         <outlet property="saveButton" destination="fpz-Sv-285" id="yXA-2A-yAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="oYF-h9-PJv" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="bHq-oz-0uu">
                     <connections>
                         <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="exo-0q-Iwb"/>
@@ -83,7 +93,7 @@
             </objects>
             <point key="canvasLocation" x="1271.2" y="71.514242878560722"/>
         </scene>
-        <!--Meal Table View Controller-->
+        <!--Your Meals-->
         <scene sceneID="78o-tA-rDk">
             <objects>
                 <tableViewController id="h7y-wL-WmZ" customClass="MealTableViewController" sceneMemberID="viewController">
@@ -136,7 +146,7 @@
                             <outlet property="delegate" destination="h7y-wL-WmZ" id="dUj-NV-D4h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="pc5-XP-fAM">
+                    <navigationItem key="navigationItem" title="Your Meals" id="pc5-XP-fAM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ry0-LC-YbN">
                             <connections>
                                 <segue destination="m2g-Kh-D0j" kind="presentation" id="MiS-nq-JcB"/>

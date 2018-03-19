@@ -16,9 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     _nameTextField.delegate = self;
- 
 }
 
 
@@ -57,21 +55,34 @@
     
 }
 
+#pragma mark Navigation
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    [super prepareForSegue:segue sender:sender];
+    
+    if ([sender class] == [UIBarButtonItem class] && sender == _saveButton){
+        NSLog(@"!!!");
+        Meal *mael = [[Meal alloc] init];
+        [mael setParams:_nameTextField.text andPhoto:_photoImageView.image andRating:_ratingControl.rating];
+        _meal = mael;
+    }
+    
+}
+
 
 #pragma mark Actions
 
 - (IBAction)selectImageFromPhotoLibrary:(UITapGestureRecognizer*)sender {
     [_nameTextField resignFirstResponder];
-    
     UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
-    
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    
     imagePickerController.delegate = self;
-    
     [self presentViewController:imagePickerController animated:YES completion:nil];
-    
 }
 
 
+- (IBAction)cancel:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

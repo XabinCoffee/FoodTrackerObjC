@@ -19,5 +19,6 @@ IB_DESIGNABLE
 -(id)initWithFrame:(CGRect)frame;
 -(id)initWithCoder:(NSCoder*)coder;
 -(void)setupButtons;
+-(void)updateButtonSelectionStates;
 
 @end

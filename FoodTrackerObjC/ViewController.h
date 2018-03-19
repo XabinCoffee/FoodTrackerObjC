@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Meal.h"
+#import "RatingControl.h"
 
 @interface ViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet RatingControl *ratingControl;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+
+@property Meal *meal;
+
+- (IBAction)cancel:(UIBarButtonItem *)sender;
+
 
 @end
 
